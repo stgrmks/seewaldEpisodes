@@ -13,10 +13,10 @@ class SeewaldepisodesPipeline:
             data_chunk: bytes
             for data_chunk in tqdm(r.iter_content(chunk_size=4096)):
                 content += data_chunk
-        file_name: str = item.get("url").split("/")[-1].split(".mp3")[0]
+        file_name: str = item.get("url").split("/")[-1]
         data: Dict = {
-            "token": getenv("token"),
-            "channels": [getenv("channel")],
+            "token": getenv("TOKEN"),
+            "channels": [getenv("CHANNEL")],
             "content": content,
             "filename": file_name,
             "filetype": "mp3",
