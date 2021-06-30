@@ -8,8 +8,8 @@ services:
       dockerfile: Dockerfile
     container_name: seewaldEpisodes
     environment:
-      - SLACK_TOKEN=admin
-      - SLACK_CHANNEL=admin
+      - SLACK_TOKEN=${SLACK_TOKEN}
+      - SLACK_CHANNEL=${$SLACK_CHANNEL}
     restart: on-failure
     healthcheck:
       test: "exit 0"
