@@ -2,18 +2,14 @@ version: '3.6'
 
 services:
 
-  rest:
+  spider:
     build:
       context: .
-      dockerfile: Dockerfile.rest
-    container_name: charging_api-rest
+      dockerfile: Dockerfile
+    container_name: seewaldEpisodes
     environment:
       - SLACK_TOKEN=admin
       - SLACK_CHANNEL=admin
-    ports:
-      - 8080:8080
     restart: on-failure
-    depends_on:
-      - db
     healthcheck:
       test: "exit 0"
