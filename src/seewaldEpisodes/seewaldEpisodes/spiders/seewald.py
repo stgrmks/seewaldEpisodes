@@ -4,7 +4,7 @@ from seewaldEpisodes.seewaldEpisodes.items import SeewaldepisodesItem
 
 
 class SeewaldEpisodes(Spider):
-    name = "SeeWaldSpider"
+    name = "SeewaldEpisodes"
 
     def start_requests(self):
         yield Request(
