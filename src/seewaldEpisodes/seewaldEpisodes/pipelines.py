@@ -16,8 +16,8 @@ class SlackPipeline:
                 content += data_chunk
         file_name: str = item.get("url").split("/")[-1]
         data: Dict = {
-            "token": getenv("TOKEN"),
-            "channels": [getenv("CHANNEL")],
+            "token": getenv("SLACK_TOKEN"),
+            "channels": [getenv("SLACK_CHANNEL")],
             "content": content,
             "filename": file_name,
             "filetype": "mp3",
