@@ -7,9 +7,8 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: seewaldEpisodes
-    environment:
-      - SLACK_TOKEN=${SLACK_TOKEN}
-      - SLACK_CHANNEL=${$SLACK_CHANNEL}
+    env_file:
+      - .env
     restart: on-failure
     healthcheck:
       test: "exit 0"
