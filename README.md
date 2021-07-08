@@ -1,7 +1,7 @@
 # Seewald - Episodes
 Downloads latest [Seewald Episode](https://www.egofm.de/musik/entdecken/sendung-seewald-zum-nachhoeren) and pushes it to slack.
 ## Install
-$ python3 -m pip install -U git+git://github.com/stgrmks/seewaldEpisodes.git
+    $ python3 -m pip install -U git+git://github.com/stgrmks/seewaldEpisodes.git
 ## Usage
 ### Python
 ```python
@@ -13,4 +13,3 @@ get_episode(**custom_settings)
 ```
 ### Docker
 TODO
-
