@@ -10,11 +10,7 @@ services:
     env_file:
       - .env
     volumes:
-      - downloads:/app/downloads
+      - ./downloads:/app/downloads
     restart: on-failure
     healthcheck:
       test: "exit 0"
-
-volumes:
-  downloads:
-    driver: local
