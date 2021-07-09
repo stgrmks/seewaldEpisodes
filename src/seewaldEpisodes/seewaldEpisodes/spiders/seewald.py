@@ -1,6 +1,11 @@
+import os.path
+
 from scrapy import Request, Spider
 from scrapy.http import Response
 from seewaldEpisodes.seewaldEpisodes.items import SeewaldepisodesItem
+from seewaldEpisodes.utils import get_logger
+
+log = get_logger(os.path.basename((__file__)))
 
 
 class SeewaldEpisodes(Spider):
@@ -18,4 +23,4 @@ class SeewaldEpisodes(Spider):
                 url=response.xpath("//meta[@itemprop='contentUrl']/@content").get()
             )
         except Exception as anyErr:
-            print("Failed to find the content url!")
+            log.error(f"Failed to find the content url: {anyErr}")
