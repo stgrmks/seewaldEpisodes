@@ -1,10 +1,11 @@
+import os.path
 from os import getenv
 from typing import Dict
 
 from requests import get, post
 from tqdm import tqdm
 
-from seewaldEpisodes.seewaldEpisodes.items import SeewaldepisodesItem
+from .items import SeewaldepisodesItem
 
 
 class SlackPipeline:
@@ -39,7 +40,13 @@ class FilePipeline:
     def process_item(self, item: SeewaldepisodesItem, _):
         with get(url=item.get("url"), stream=True) as r:
             r.raise_for_status()
-            with open(item.get("url").split("/")[-1], "wb") as f:
+            base_path: str = os.path.join(
+                os.path.abspath(os.path.dirname(__file__)), "../../../downloads"
+            )
+            if not os.path.exists(base_path):
+                os.makedirs(base_path)
+            file_name: str = item.get("url").split("/")[-1]
+            with open(os.path.join(base_path, file_name), "wb") as f:
                 data_chunk: bytes
                 for data_chunk in tqdm(r.iter_content(chunk_size=4096)):
                     f.write(data_chunk)
