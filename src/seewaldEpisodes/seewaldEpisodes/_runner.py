@@ -16,7 +16,3 @@ def get_episode(**custom_settings):
     d: Deferred = runner.crawl(crawler_or_spidercls=SeewaldEpisodes)
     d.addBoth(lambda _: reactor.stop())
     reactor.run()
-
-
-if __name__ == "__main__":
-    get_episode()
