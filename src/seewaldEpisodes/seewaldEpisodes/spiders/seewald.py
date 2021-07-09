@@ -3,10 +3,10 @@ import os.path
 from scrapy import Request, Spider
 from scrapy.http import Response
 
-from seewaldEpisodes.seewaldEpisodes.items import SeewaldepisodesItem
-from seewaldEpisodes.utils import get_logger
+from ...utils import get_logger
+from ..items import SeewaldepisodesItem
 
-log = get_logger(os.path.basename((__file__)))
+log = get_logger(os.path.basename(__file__))
 
 
 class SeewaldEpisodes(Spider):
