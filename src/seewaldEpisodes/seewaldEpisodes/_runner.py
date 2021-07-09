@@ -1,10 +1,11 @@
 from scrapy.crawler import CrawlerRunner
 from scrapy.settings import Settings
-
-from . import settings as my_settings
-from seewaldEpisodes.seewaldEpisodes.spiders.seewald import SeewaldEpisodes
 from twisted.internet import reactor
 from twisted.internet.defer import Deferred
+
+from seewaldEpisodes.seewaldEpisodes.spiders.seewald import SeewaldEpisodes
+
+from . import settings as my_settings
 
 
 def get_episode(**custom_settings):

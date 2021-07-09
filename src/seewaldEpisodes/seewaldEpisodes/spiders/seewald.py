@@ -2,6 +2,7 @@ import os.path
 
 from scrapy import Request, Spider
 from scrapy.http import Response
+
 from seewaldEpisodes.seewaldEpisodes.items import SeewaldepisodesItem
 from seewaldEpisodes.utils import get_logger
 
