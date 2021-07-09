@@ -1,6 +1,5 @@
 import codecs
 import os
-
 from setuptools import find_packages, setup
 
 
@@ -34,7 +33,7 @@ def parse_requirements(rel_path):
 # Get the long description from the README file
 name = "seewald_episodes"
 version = get_version("src/seewaldEpisodes/__init__.py")
-description = "Collects new episode of 'Seewald - Die Vermessung der Musik'"
+description = "Collects latest episode of 'Seewald - Die Vermessung der Musik'"
 long_description = read("README.md")
 long_description_content_type = "text/markdown"
 url = "https://github.com/stgrmks/seewaldEpisodes"
@@ -49,10 +48,10 @@ classifiers = [
     "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3 :: Only",
 ]
-keywords = "ego-fm, seewald, spider"
+keywords = "ego-fm, egofm, seewald, spider"
 packages = find_packages(where="src")
 package_dir = {"": "src"}
-python_requires = ">=3.5, <4"
+python_requires = ">=3.9, <4"
 install_requirements = parse_requirements("requirements.txt")
 
 project_urls = {  # Optional
