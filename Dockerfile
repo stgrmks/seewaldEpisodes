@@ -1,4 +1,4 @@
-FROM winnerokay/uvicorn-gunicorn:python3.9
+FROM python:3.9-slim-buster
 COPY ./ /app
 WORKDIR /app
 RUN pip install pip==21.1.2
